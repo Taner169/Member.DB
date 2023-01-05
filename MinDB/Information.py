@@ -34,4 +34,4 @@ def create():
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
         elif event == 'Delete':
-            interface.delete_member_by_name(first_name=False)
+            interface.delete_member_by_name(first_name=True)
