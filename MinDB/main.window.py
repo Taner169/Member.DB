@@ -5,7 +5,8 @@ import validation
 
 
 
-layout = [[sg.Text("First Name:"), sg.Push(), sg.Input(key='-FIRSTNAME-', do_not_clear=True, size=(40, 3))],
+layout = [[sg.Text("ID:"),sg.Push(),sg.Input(key='-ID-', do_not_clear=True,size=(40, 3))],
+          [sg.Text("First Name:"), sg.Push(), sg.Input(key='-FIRSTNAME-', do_not_clear=True, size=(40, 3))],
           [sg.Text("Last Name:"), sg.Push(), sg.Input(key='-LASTNAME-', do_not_clear=True, size=(40, 3))],
           [sg.Text("Street Address:"), sg.Push(), sg.Input(key='-STREETADDRESS-', do_not_clear=True, size=(40, 3))],
           [sg.Text("ZIP Code:"), sg.Push(),  sg.Input(key='-ZIPCODE-', do_not_clear=True, size=(40, 3))],
@@ -22,7 +23,7 @@ while True:
     elif event == 'Submit Member Information':
         validation_result = validation.validate(values)
         if validation_result["is_valid"]:
-            interface.insert_member(values['-FIRSTNAME-'], values['-LASTNAME-'],
+            interface.insert_member(values['-ID-'], values['-FIRSTNAME-'], values['-LASTNAME-'],
                                      values['-STREETADDRESS-'], values['-ZIPCODE-'], values['-MAIL-'], values['-PAYEDFEE-'])
             sg.popup("Member Information submitted!")
 

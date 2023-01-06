@@ -2,6 +2,10 @@ def validate(values):
     is_valid = True
     values_invalid = []
 
+    if len(values['-ID-']) == 0:
+        values_invalid.append('id')
+        is_valid = False
+
     if len(values['-FIRSTNAME-']) == 0:
         values_invalid.append('first_name')
         is_valid = False
